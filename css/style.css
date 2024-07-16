@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* 字体大小/行高（字体大小的1.5倍） */
+    font: 14px/1.5 Arial, Helvetica, sans-serif;
+    display: grid;
+    grid: auto / 1fr 600px 1fr;
+    /* 从左往右，三色渐变
+    linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)) */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
+    url(../imgs/背景.jpeg) center no-repeat;
+    /* background-position: 0 0 ; */
+    /* 无法覆盖整个屏幕的时候 */
+    min-height: 100vh;
+    background-size: cover;
+    /* 背景磨砂 */
+    backdrop-filter: blur(4px);
+}
+
+.page {
+    grid-area: 1 / 2 / 2 / 3;
+    /* 磨砂效果 */
+    /* filter: blur(4px); */
+}
+
+.search {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.search_buttons {
+    display: flex;
+    padding: 3px;
+}
+
+.baidu_button,.bing_button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+.baidu_button{
+    margin-right: 10px;
+}
+
+.icon {
+    width: 1em;
+    height: 1em;
+    margin-right: 2px;
+}
+
+.search_tab {
+    position: relative;
+    width: 80%;
+    margin-top: 15px;
+}
+
+.search_input{
+    width: 100%;
+    border: 0;
+    border-radius: 4px;
+    outline: 0;
+    padding: 0px 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    /* 行高 */
+    line-height: 40px;
+}
+
+.search_input::placeholder {
+    color: #ccc;
+}
+
+.search_input + .icon {
+    width: 20px;
+    height: 20px;
+    margin: 0px;
+    position: absolute;
+    right: 5px;
+    top: 9px;
+    z-index: 1;
+}
